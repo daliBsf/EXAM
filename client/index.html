@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="styles/vendor.96921311.css"> </head>
+<link rel="stylesheet" href="scripts/angular-material/angular-material.css">
+
+<body ng-app="app" ng-controller="main">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header"> <a class="navbar-brand" href="#">EXAM</a> </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#!/">Home</a></li>
+                <li><a ng-click="profile()">Profile</a></li>
+            </ul>
+            <div ng-switch on="state.state">
+                <form class="navbar-form navbar-right" ng-switch-when="false">
+                    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> <input ng-model="data.email" id="email" type="text" class="form-control" placeholder="Email"> </div>
+                    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> <input ng-model="data.password" id="passwor" type="password" class="form-control" placeholder="Password"> </div>
+                    <div class="form-group">
+
+                        <div class="radio-inline">
+                            <label style="color:white"><input  type="radio" ng-model="logInfo.loginType" value="admin" name="typeLogin">Admin</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label style="color:white"><input type="radio" ng-model="logInfo.loginType" value="candidat" name="typeLogin">Candidat</label>
+                        </div>
+                    </div>
+                    <button type="submit" ng-click="login()" class="btn btn-danger">Login</button>
+                </form>
+                <button class="btn btn-danger navbar-btn navbar-right" ng-switch-when="true" ng-click="logout()">Logout</button>
+
+
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div ng-view=""></div>
+
+    </div>
+
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/angular-resource.js"></script>
+    <script src="scripts/angular-cookies.min.js"></script>
+    <script src="scripts/angular-animate/angular-animate.min.js"></script>
+    <script src="scripts/angular-aria/angular-aria.min.js"></script>
+    <script src="scripts/angular-material/angular-material.min.js"></script>
+    
+    
+    <script src="scripts/moment.js"></script>
+    <script src="scripts/humanize-duration.js"></script>
+    <script src="scripts/_timer.js"></script>
+
+    
+    <script src="scripts/i18nService.js"></script>
+    <script src="scripts/progressBarService.js"></script>
+
+
+    <script src="scripts/Controller/controllers.js"></script>
+    <script src="scripts/Controller/mainController.js"></script>
+    <script src="scripts/Controller/profileController.js"></script>
+    <script src="scripts/Controller/cProfileController.js"></script>
+    <script src="scripts/Controller/homeController.js"></script>
+    <script src="scripts/Controller/createQuestionsController.js"></script>
+    <script src="scripts/Controller/createTestController.js"></script>
+    <script src="scripts/Controller/assignerCnadidat.js"></script>
+    <script src="scripts/Controller/passerTestController.js"></script>
+
+    <script src="scripts/routes.js"></script>
+
+    <script src="scripts/lb-services.js"></script>
+    <script src="scripts/Service/services.js"></script>
+    <script src="scripts/Service/authentification.js"></script>
+    <script src="scripts/Service/createTestService.js"></script>
+
+    <script src="scripts/app.js"></script>
+
+
+</body>
+
+</html>

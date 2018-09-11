@@ -1,0 +1,68 @@
+{
+  "name": "Examen",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Label": {
+      "type": "string",
+      "required": true,
+      "default": "DefaultExamen"
+    },
+    "nbQuest": {
+      "type": "number",
+      "required": true
+    },
+    "duree": {
+      "type": "number",
+      "required": true
+    },
+    "minScore": {
+      "type": "number",
+      "required": true
+    },
+    "nbAdmis": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    },
+    "dateDeb": {
+      "type": "date",
+      "required": true
+    },
+    "dateFin": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "questions": {
+      "type": "hasMany",
+      "model": "Question",
+      "foreignKey": ""
+    },
+    "admin": {
+      "type": "belongsTo",
+      "model": "Admin",
+      "foreignKey": "adminId"
+    },
+    "candidats": {
+      "type": "hasMany",
+      "model": "Candidat",
+      "foreignKey": "",
+      "through": "CandidatExamen"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

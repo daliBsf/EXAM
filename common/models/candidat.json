@@ -1,0 +1,42 @@
+{
+  "name": "Candidat",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Nom": {
+      "type": "string",
+      "required": true
+    },
+    "Prenom": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "examens": {
+      "type": "hasMany",
+      "model": "Examen",
+      "foreignKey": "",
+      "through": "CandidatExamen"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

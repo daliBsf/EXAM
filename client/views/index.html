@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-sm-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">Introduction</div>
+            <div class="panel-body"> The EXAM hosted Online Testing software is a Quiz maker tool for teachers & businesses. Used for business & training Tests; recruitment & pre-employment assessments;  educational facilities, schools, universities, distance learning, online courses, E-Learning, self-study groups, practice Tests & more. Our custom web-based Testing tool allows you to easily create & give secure online Exams to your exact requirements with features such as time limits, randomize Questions, instant feedback, multiple choice, matching, short answer, essay & more Question types. </div>
+        </div>
+    </div>
+    <div class="col-sm-4" ng-show="!state.state">
+        <div class="panel panel-default">
+            <div class="panel-heading">Registration</div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <md-input-container>
+                        <label>Name</label>
+                        <input type="text" ng-model="dataregistre.Nom">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Surname</label>
+                        <input type="text" ng-model="dataregistre.Prenom">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Email</label>
+                        <input type="email" ng-model="dataregistre.email">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Password</label>
+                        <input type="password" ng-model="dataregistre.password">
+                    </md-input-container>
+                    <md-radio-group layout="row" ng-model="signType">
+                        <label class="control-label col-sm-2">Type:</label>
+                        <div class="col-sm-10" layout="row">
+                            <md-radio-button value="admin" class="md-primary">Admin</md-radio-button>
+                            <md-radio-button value="candidat"> Candidat </md-radio-button>
+                        </div>
+
+
+                    </md-radio-group>
+                    <br>
+                    <button type="submit" ng-click="sign()" class="btn btn-danger btn-block">Register</button> </form>
+            </div>
+            <div class="alert alert-danger" ng-show="signError">
+                <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+            </div>
+        </div>
+    </div>
+</div>

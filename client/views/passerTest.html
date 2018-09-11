@@ -1,0 +1,76 @@
+<div class="sample" layout="column" ng-cloak>
+    <md-content class="md-padding" style="height:">
+        <md-tabs md-dynamic-height md-selected="selectedIndex" md-border-bottom md-autoselect>
+            <md-tab ng-repeat="tab in tabs" ng-disabled="tab.disabled" label="{{tab.title}}">
+                <md-content>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             <timer countdown="examen.duree*60" max-time-unit="'minute'" interval="1000"><div>Le Temp restant est : {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</div>
+                             </timer>
+                        </div>
+                        <div class="panel-body">
+                           
+                            
+                            <form class="form-horizontal">
+                                <div class="form-group"> <label class="control-label col-sm-2" for="enonce">Enonce</label>
+                                    <div class="col-sm-10">
+                                        <p rows="10" ng-bind="questions[$index].enonce" id="enonce"></p>
+                                    </div>
+                                </div>
+                                <div class="form-group"> <label class="control-label col-sm-2" for="choix1">choix 1 :</label>
+                                    <div class="col-sm-10">
+                                        <p required type="text" id="choix1" ng-bind="questions[$index].choix[0]">
+                                            <p></p>
+                                    </div>
+                                </div>
+                                <div class="form-group"> <label class="control-label col-sm-2" for="choix2">choix 2 :</label>
+                                    <div class="col-sm-10">
+                                        <p required type="text" id="choix2" ng-bind="questions[$index].choix[1]"> </p>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="form-group"> <label class="control-label col-sm-2" for="choix3">choix 3 :</label>
+                                    <div class="col-sm-10">
+                                        <p required type="text" id="choix3" ng-bind="questions[$index].choix[2]"></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group"> <label class="control-label col-sm-2" for="choix4">choix 4 :</label>
+                                    <div class="col-sm-10">
+                                        <p required type="text" id="choix4" ng-bind="questions[$index].choix[3]"> </p>
+                                    </div>
+                                </div>
+
+                                <md-radio-group ng-model="responses[$index]">
+                                    <label class="control-label col-sm-2">Reponse:</label>
+                                    <div class="col-sm-10">
+                                        <md-radio-button value="1">1</md-radio-button>
+                                        <md-radio-button value="2"> 2 </md-radio-button>
+                                        <md-radio-button value="3"> 3 </md-radio-button>
+                                        <md-radio-button value="4"> 4 </md-radio-button>
+
+                                    </div>
+
+
+                                </md-radio-group>
+
+
+
+                            </form>
+                                
+                        </div>
+                    </div>
+                </md-content>
+                <br/>
+                <md-button class="md-primary md-raised pull-right" ng-click="confirm()" ng-show="$index==tabs.length-1">Confirmer </md-button>
+                <md-button class="md-primary md-raised pull-right" ng-click="next()" ng-show="$index<tabs.length-1">Next </md-button>
+                <md-button class="md-primary md-raised pull-left" ng-click="previous()" ng-disabled="$index==0">Previous </md-button>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>

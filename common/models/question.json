@@ -1,0 +1,38 @@
+{
+  "name": "Question",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "enonce": {
+      "type": "string",
+      "required": true
+    },
+    "choix": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    },
+    "reponse": {
+      "type": "string",
+      "required": true
+    },
+    "score": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "examen": {
+      "type": "belongsTo",
+      "model": "Examen",
+      "foreignKey": "examenId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+    <div class="panel-heading">List Test</div>
+    <div class="panel-body" id="popupContainer">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Examen</th>
+                    <th>Etat</th>
+                    <th>Passer</th>
+                    <th>Resultat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="exam in exams">
+                    <td>{{ exam.examen.Label }}</td>
+                    <td><span class="label label-success" ng-show="exam.state">Passé</span><span ng-show="!exam.state" class="label label-info">Non Passé</span>
+
+
+                    <td><button class="btn btn-success" ng-disabled="exam.state" ng-click="passer(exam.examen.id)">Passer</button></td>
+                    <td><button class="btn btn-success" ng-disabled="!exam.state" ng-click="result(exam.examen.id)">Resultat</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

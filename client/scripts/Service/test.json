@@ -1,0 +1,22 @@
+{
+    "examen": {
+        "Label": "analyse",
+        "nbQuest": 2,
+        "duree": 60,
+        "minScore": 20,
+        "nbAdmis": 5,
+        "dateDeb": "2017-04-22T22:00:00.000Z",
+        "dateFin": "2017-04-29T22:00:00.000Z"
+    },
+    "question": [{
+        "choix": ["qsdsqd", "sqdqsd", "sqdqsd", "sqdqd"],
+        "enonce": "qsdsqd",
+        "reponse": "2",
+        "score": 17
+    }, {
+        "choix": ["sqdqsd", "sqdqsd", "qsdsqd", "sqdsqd"],
+        "enonce": "sqdsqdqsd",
+        "reponse": "3",
+        "score": 19
+    }]
+}

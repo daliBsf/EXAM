@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Create Test</div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Examen</th>
+                    <th>Assign</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="exam in exams">
+                    <td>{{ exam.Label }}</td>
+                    <td><button class="btn btn-success" ng-click="assign(exam.id)">assign</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <button class="btn btn-success" ng-click="createTest()">Create Test</button>
+    </div>
+</div>
